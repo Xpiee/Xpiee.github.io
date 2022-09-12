@@ -17,7 +17,7 @@ jobs:
       id: sitemap
       uses: cicirello/generate-sitemap@v1.8.4
       with:
-        base-url-path: https://anubhavbhatti.com/
+        base-url-path: https://www.anubhavbhatti.com/
         include-pdf: false
 
     - name: Output stats
