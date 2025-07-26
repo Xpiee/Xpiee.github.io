@@ -1,0 +1,681 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Anubhav Bhatti</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+		<style>
+			/* Modern CSS Reset and Base Styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			:root {
+				--primary-color: #2563eb;
+				--secondary-color: #3b82f6;
+				--accent-color: #60a5fa;
+				--text-primary: #1f2937;
+				--text-secondary: #6b7280;
+				--bg-primary: #ffffff;
+				--bg-secondary: #f9fafb;
+				--bg-card: #ffffff;
+				--border-color: #e5e7eb;
+				--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+				--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+				--transition: all 0.3s ease;
+			}
+
+			[data-theme="dark"] {
+				--primary-color: #3b82f6;
+				--secondary-color: #60a5fa;
+				--accent-color: #93c5fd;
+				--text-primary: #f9fafb;
+				--text-secondary: #d1d5db;
+				--bg-primary: #111827;
+				--bg-secondary: #1f2937;
+				--bg-card: #1f2937;
+				--border-color: #374151;
+			}
+
+			body {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: var(--text-primary);
+				background-color: var(--bg-primary);
+				transition: var(--transition);
+			}
+
+			/* Navigation */
+			.navbar {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				border-bottom: 1px solid var(--border-color);
+				z-index: 1000;
+				transition: var(--transition);
+			}
+
+			[data-theme="dark"] .navbar {
+				background: rgba(17, 24, 39, 0.95);
+			}
+
+			.nav-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 1rem 2rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.nav-logo {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: var(--primary-color);
+				text-decoration: none;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+				gap: 2rem;
+			}
+
+			.nav-link {
+				color: var(--text-primary);
+				text-decoration: none;
+				font-weight: 500;
+				transition: var(--transition);
+				position: relative;
+			}
+
+			.nav-link:hover {
+				color: var(--primary-color);
+			}
+
+			.nav-link::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 0;
+				height: 2px;
+				background: var(--primary-color);
+				transition: var(--transition);
+			}
+
+			.nav-link:hover::after {
+				width: 100%;
+			}
+
+			.theme-toggle {
+				background: none;
+				border: none;
+				color: var(--text-primary);
+				font-size: 1.2rem;
+				cursor: pointer;
+				padding: 0.5rem;
+				border-radius: 50%;
+				transition: var(--transition);
+			}
+
+			.theme-toggle:hover {
+				background: var(--bg-secondary);
+				color: var(--primary-color);
+			}
+
+			/* Hero Section */
+			.hero {
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.hero::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+				animation: float 20s ease-in-out infinite;
+			}
+
+			@keyframes float {
+				0%, 100% { transform: translateY(0px); }
+				50% { transform: translateY(-20px); }
+			}
+
+			.hero-content {
+				text-align: center;
+				color: white;
+				z-index: 1;
+				max-width: 800px;
+				padding: 2rem;
+			}
+
+			.hero-avatar {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				margin: 0 auto 2rem;
+				border: 4px solid white;
+				box-shadow: var(--shadow-lg);
+				animation: pulse 2s infinite;
+			}
+
+			@keyframes pulse {
+				0% { transform: scale(1); }
+				50% { transform: scale(1.05); }
+				100% { transform: scale(1); }
+			}
+
+			.hero-title {
+				font-size: 3.5rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+				animation: slideInUp 1s ease-out;
+			}
+
+			.hero-subtitle {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+				opacity: 0.9;
+				animation: slideInUp 1s ease-out 0.2s both;
+			}
+
+			.hero-description {
+				font-size: 1.1rem;
+				margin-bottom: 2rem;
+				opacity: 0.8;
+				animation: slideInUp 1s ease-out 0.4s both;
+			}
+
+			@keyframes slideInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.cta-button {
+				display: inline-block;
+				padding: 1rem 2rem;
+				background: white;
+				color: var(--primary-color);
+				text-decoration: none;
+				border-radius: 50px;
+				font-weight: 600;
+				transition: var(--transition);
+				animation: slideInUp 1s ease-out 0.6s both;
+			}
+
+			.cta-button:hover {
+				transform: translateY(-2px);
+				box-shadow: var(--shadow-lg);
+			}
+
+			/* Main Content */
+			.main-content {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 4rem 2rem;
+			}
+
+			.section {
+				margin-bottom: 5rem;
+			}
+
+			.section-title {
+				font-size: 2.5rem;
+				font-weight: 700;
+				text-align: center;
+				margin-bottom: 3rem;
+				color: var(--text-primary);
+			}
+
+			/* Card Grid System */
+			.card-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.card {
+				background: var(--bg-card);
+				border-radius: 16px;
+				padding: 2rem;
+				box-shadow: var(--shadow);
+				border: 1px solid var(--border-color);
+				transition: var(--transition);
+				overflow: hidden;
+			}
+
+			.card:hover {
+				transform: translateY(-5px);
+				box-shadow: var(--shadow-lg);
+			}
+
+			.card-image {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 12px;
+				margin-bottom: 1.5rem;
+			}
+
+			.card-title {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+				color: var(--text-primary);
+			}
+
+			.card-subtitle {
+				font-size: 0.9rem;
+				color: var(--text-secondary);
+				margin-bottom: 1rem;
+			}
+
+			.card-description {
+				color: var(--text-secondary);
+				line-height: 1.6;
+			}
+
+			.card-link {
+				color: var(--primary-color);
+				text-decoration: none;
+				font-weight: 500;
+			}
+
+			.card-link:hover {
+				text-decoration: underline;
+			}
+
+			/* Social Links */
+			.social-links {
+				display: flex;
+				justify-content: center;
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+
+			.social-link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 50px;
+				height: 50px;
+				background: var(--bg-secondary);
+				color: var(--text-primary);
+				border-radius: 50%;
+				text-decoration: none;
+				transition: var(--transition);
+			}
+
+			.social-link:hover {
+				background: var(--primary-color);
+				color: white;
+				transform: translateY(-2px);
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.nav-menu {
+					display: none;
+				}
+
+				.hero-title {
+					font-size: 2.5rem;
+				}
+
+				.hero-subtitle {
+					font-size: 1.2rem;
+				}
+
+				.card-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.main-content {
+					padding: 2rem 1rem;
+				}
+			}
+
+			/* Scroll Animations */
+			.fade-in {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: all 0.6s ease;
+			}
+
+			.fade-in.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav class="navbar">
+			<div class="nav-container">
+				<a href="#home" class="nav-logo">Anubhav Bhatti</a>
+				<ul class="nav-menu">
+					<li><a href="#home" class="nav-link">Home</a></li>
+					<li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+					<li><a href="#publications" class="nav-link">Publications</a></li>
+					<li><a href="#education" class="nav-link">Education</a></li>
+					<li><a href="#experience" class="nav-link">Experience</a></li>
+				</ul>
+				<button class="theme-toggle" id="themeToggle">
+					<i class="fas fa-moon"></i>
+				</button>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<section id="home" class="hero">
+			<div class="hero-content">
+				<img src="images/anubhav1.jpg" alt="Anubhav Bhatti" class="hero-avatar">
+				<h1 class="hero-title">Hi! I'm Anubhav</h1>
+				<p class="hero-subtitle">Data Scientist at Ontario Health, Canada</p>
+				<p class="hero-description">I ❤️ working on Multimodal Machine Learning and Deep Learning. Research Fellow at Ingenuity Labs Research Institute, Queen's University.</p>
+				<a href="#portfolio" class="cta-button">View My Work</a>
+			</div>
+		</section>
+
+		<!-- Main Content -->
+		<main class="main-content">
+			<!-- Portfolio Section -->
+			<section id="portfolio" class="section">
+				<h2 class="section-title">Project Portfolio</h2>
+				<div class="card-grid">
+					<div class="card fade-in">
+						<img src="images/bikeshare.jpg" alt="Bike Sharing" class="card-image">
+						<h3 class="card-title">
+							<a href="https://github.com/Xpiee/BikeSharing" class="card-link" target="_blank">
+								Forecast Bike Rental Demand
+							</a>
+						</h3>
+						<p class="card-description">Machine learning project to predict bike rental demand using historical data and weather patterns.</p>
+					</div>
+
+					<div class="card fade-in">
+						<img src="images/objectdetect.png" alt="Object Detection" class="card-image">
+						<h3 class="card-title">
+							<a href="https://github.com/Xpiee/SEMobNet-Object-Detection" class="card-link" target="_blank">
+								Lightweight Object-Detection with SE-MobileNet-SSD
+							</a>
+						</h3>
+						<p class="card-description">Efficient object detection system using Squeeze-and-Excitation MobileNet architecture.</p>
+					</div>
+
+					<div class="card fade-in">
+						<img src="images/cooking.jpg" alt="Cooking Prediction" class="card-image">
+						<h3 class="card-title">
+							<a href="https://github.com/Xpiee/whatsCooking" class="card-link" target="_blank">
+								What's Cooking? Predict Dish's Cuisine Based On Ingredients
+							</a>
+						</h3>
+						<p class="card-description">Machine learning model to predict cuisine type based on ingredient lists.</p>
+					</div>
+
+					<div class="card fade-in">
+						<img src="images/cogload.gif" alt="Cognitive Load" class="card-image">
+						<h3 class="card-title">
+							<a href="https://github.com/Xpiee/cognitive_load_estimate" class="card-link" target="_blank">
+								Cognitive Load Estimation in Real-time
+							</a>
+						</h3>
+						<p class="card-description">Real-time system for estimating cognitive load using physiological signals.</p>
+					</div>
+
+					<div class="card fade-in">
+						<img src="images/simplenet.png" alt="SimpleNet" class="card-image">
+						<h3 class="card-title">
+							<a href="https://github.com/Xpiee/SimpleNet-CIFAR" class="card-link" target="_blank">
+								SimpleNet in Python using Pytorch
+							</a>
+						</h3>
+						<p class="card-description">Implementation of SimpleNet architecture for CIFAR dataset classification.</p>
+					</div>
+
+					<div class="card fade-in">
+						<img src="images/fraud.jpg" alt="Fraud Detection" class="card-image">
+						<h3 class="card-title">
+							<a href="https://github.com/Xpiee/Fraud-Detection" class="card-link" target="_blank">
+								Determine If Online Transaction Is Fraudulent Or Not
+							</a>
+						</h3>
+						<p class="card-description">Machine learning model for detecting fraudulent online transactions.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Publications Section -->
+			<section id="publications" class="section">
+				<h2 class="section-title">Publications</h2>
+				<div class="card-grid">
+					<div class="card fade-in">
+						<img src="images/acii.png" alt="ACII Paper" class="card-image">
+						<h3 class="card-title">
+							<a href="https://ieeexplore.ieee.org/abstract/document/9666360" class="card-link" target="_blank">
+								Attentive Cross–modal Connections For Deep Multimodal Wearable–based Emotion Recognition
+							</a>
+						</h3>
+						<p class="card-subtitle">IEEE Affective Computing and Intelligent Interaction (ACIIW)</p>
+						<p class="card-description">Research on attentive cross-modal connections for emotion recognition using wearable devices.</p>
+					</div>
+
+					<div class="card fade-in">
+						<img src="images/attx2.png" alt="AttX Paper" class="card-image">
+						<h3 class="card-title">
+							<a href="https://arxiv.org/abs/2206.04625" class="card-link" target="_blank">
+								AttX: Attentive Cross-Connections For Fusion Of Wearable Signals In Emotion Recognition
+							</a>
+						</h3>
+						<p class="card-subtitle">Arxiv [Under Review at IEEE Journal]</p>
+						<p class="card-description">Advanced research on attentive cross-connections for wearable signal fusion in emotion recognition.</p>
+					</div>
+
+					<div class="card fade-in">
+						<img src="images/transformer.png" alt="Transformer Paper" class="card-image">
+						<h3 class="card-title">
+							<a href="https://dl.acm.org/doi/abs/10.1145/3460421.3480427" class="card-link" target="_blank">
+								A Transformer Architecture For Stress Detection From ECG
+							</a>
+						</h3>
+						<p class="card-subtitle">ACM International Symposium on Wearable Computers (ISWC)</p>
+						<p class="card-description">Transformer-based architecture for stress detection using ECG signals.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Thesis Section -->
+			<section id="thesis" class="section">
+				<h2 class="section-title">Masters Thesis</h2>
+				<div class="card fade-in" style="max-width: 800px; margin: 0 auto;">
+					<img src="images/thesis.png" alt="Thesis" class="card-image">
+					<h3 class="card-title">
+						<a href="https://qspace.library.queensu.ca/handle/1974/30214" class="card-link" target="_blank">
+							Attentive Cross-Modal Connections for Learning Multimodal Representations from Wearable Signals for Affect Recognition
+						</a>
+					</h3>
+					<p class="card-description">
+						We propose attentive cross-modal connections for sharing intermediate information between wearable modalities.
+						To enable uni-directional or bi-directional information sharing between the modalities, we introduce three AttX connection types.
+						Our proposed method can be integrated into different stages of deep learning pipelines and can successfully enhance the overall learned representations.
+					</p>
+				</div>
+			</section>
+
+			<!-- Education Section -->
+			<section id="education" class="section">
+				<h2 class="section-title">Education</h2>
+				<div class="card-grid">
+					<div class="card fade-in">
+						<img src="images/machine.jpg" alt="Queen's University" class="card-image">
+						<h3 class="card-title">Master's Degree in Artificial Intelligence</h3>
+						<p class="card-subtitle">Queen's University (2019-2022)</p>
+						<p class="card-description">Specialized in machine learning, deep learning, and artificial intelligence research.</p>
+					</div>
+
+					<div class="card fade-in">
+						<img src="images/electrical.jpg" alt="NIT Srinagar" class="card-image">
+						<h3 class="card-title">Bachelor's Degree in Electrical Engineering</h3>
+						<p class="card-subtitle">National Institute of Technology, Srinagar, India (2010-2014)</p>
+						<p class="card-description">Foundation in electrical engineering principles and systems.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Work Experience Section -->
+			<section id="experience" class="section">
+				<h2 class="section-title">Work Experience</h2>
+				<div class="card-grid">
+					<div class="card fade-in">
+						<h3 class="card-title">Data Scientist</h3>
+						<p class="card-subtitle">Ontario Health, Canada (2020 - Present)</p>
+						<p class="card-description">Research on Transformer module to combine learnt representations from multimodal time series data.</p>
+					</div>
+
+					<div class="card fade-in">
+						<h3 class="card-title">Research Fellow</h3>
+						<p class="card-subtitle">Ingenuity Labs Research Institute, Queen's University (2020 - Present)</p>
+						<p class="card-description">Advanced research in multimodal machine learning and deep learning applications.</p>
+					</div>
+
+					<div class="card fade-in">
+						<h3 class="card-title">Intellectual Property Consultant</h3>
+						<p class="card-subtitle">Sagacious Research Canada Inc. (2019 - 2022)</p>
+						<p class="card-description">Provided IP intelligence to the head of R&D and a team of innovators of a Swiss-based automation company.</p>
+					</div>
+
+					<div class="card fade-in">
+						<h3 class="card-title">Project Manager</h3>
+						<p class="card-subtitle">Sagacious Research India (2015 - 2019)</p>
+						<p class="card-description">Provided comprehensive patent and business research to help clients evaluate technology whitespace and make better IP decisions.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer style="background: var(--bg-secondary); padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color);">
+			<div class="social-links">
+				<a href="https://www.linkedin.com/in/anubhav-bhatti-queensu/" class="social-link" target="_blank">
+					<i class="fab fa-linkedin"></i>
+				</a>
+				<a href="https://github.com/Xpiee" class="social-link" target="_blank">
+					<i class="fab fa-github"></i>
+				</a>
+				<a href="https://twitter.com/anubhavbhatti" class="social-link" target="_blank">
+					<i class="fab fa-twitter"></i>
+				</a>
+				<a href="https://scholar.google.com/citations?user=j90nV9QAAAAJ&hl=en&authuser=1" class="social-link" target="_blank">
+					<i class="fas fa-graduation-cap"></i>
+				</a>
+				<a href="https://stackoverflow.com/users/12848819/xpie" class="social-link" target="_blank">
+					<i class="fab fa-stack-overflow"></i>
+				</a>
+			</div>
+			<p style="margin-top: 2rem; color: var(--text-secondary);">
+				&copy; 2024 Anubhav Bhatti. All rights reserved.
+			</p>
+		</footer>
+
+		<!-- Scripts -->
+		<script>
+			// Theme Toggle
+			const themeToggle = document.getElementById('themeToggle');
+			const body = document.body;
+			const icon = themeToggle.querySelector('i');
+
+			// Check for saved theme preference or default to light mode
+			const currentTheme = localStorage.getItem('theme') || 'light';
+			body.setAttribute('data-theme', currentTheme);
+			updateIcon(currentTheme);
+
+			themeToggle.addEventListener('click', () => {
+				const currentTheme = body.getAttribute('data-theme');
+				const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+				
+				body.setAttribute('data-theme', newTheme);
+				localStorage.setItem('theme', newTheme);
+				updateIcon(newTheme);
+			});
+
+			function updateIcon(theme) {
+				if (theme === 'dark') {
+					icon.className = 'fas fa-sun';
+				} else {
+					icon.className = 'fas fa-moon';
+				}
+			}
+
+			// Smooth Scrolling
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					const target = document.querySelector(this.getAttribute('href'));
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
+
+			// Scroll Animations
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: '0px 0px -50px 0px'
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.fade-in').forEach(el => {
+				observer.observe(el);
+			});
+
+			// Navbar scroll effect
+			window.addEventListener('scroll', () => {
+				const navbar = document.querySelector('.navbar');
+				if (window.scrollY > 100) {
+					navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+					if (body.getAttribute('data-theme') === 'dark') {
+						navbar.style.background = 'rgba(17, 24, 39, 0.98)';
+					}
+				} else {
+					navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+					if (body.getAttribute('data-theme') === 'dark') {
+						navbar.style.background = 'rgba(17, 24, 39, 0.95)';
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
