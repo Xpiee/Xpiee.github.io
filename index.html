@@ -1,9 +1,15 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>Anubhav Bhatti</title>
+		<title>Anubhav Bhatti - Research Scientist & Data Scientist</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Anubhav Bhatti - Machine Learning Engineer and AI Researcher specializing in healthcare AI, document processing, and predictive analytics. Expert in LLM integration, OCR, NER, and transformer-based models." />
+		<meta name="keywords" content="Anubhav Bhatti, Machine Learning Engineer, AI Researcher, Healthcare AI, Document Processing, OCR, NER, LLM Integration, Transformer Models, Predictive Analytics, Vector Institute, SpassMed" />
+		<meta name="author" content="Anubhav Bhatti" />
+		<meta property="og:title" content="Anubhav Bhatti - Machine Learning Engineer & AI Researcher" />
+		<meta property="og:description" content="Specializing in healthcare AI, document processing, and predictive analytics with expertise in LLM integration and transformer-based models" />
+		<meta property="og:type" content="website" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 		<style>
@@ -15,35 +21,35 @@
 			}
 
 			:root {
-				--primary-color: #2563eb;
-				--secondary-color: #3b82f6;
-				--accent-color: #60a5fa;
-				--text-primary: #1f2937;
-				--text-secondary: #6b7280;
+				--primary-color: #1e40af;
+				--secondary-color: #3730a3;
+				--accent-color: #6366f1;
+				--text-primary: #1e293b;
+				--text-secondary: #475569;
 				--bg-primary: #ffffff;
-				--bg-secondary: #f9fafb;
+				--bg-secondary: #f8fafc;
 				--bg-card: #ffffff;
-				--border-color: #e5e7eb;
-				--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-				--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+				--border-color: #e2e8f0;
+				--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+				--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 				--transition: all 0.3s ease;
 			}
 
 			[data-theme="dark"] {
-				--primary-color: #3b82f6;
-				--secondary-color: #60a5fa;
-				--accent-color: #93c5fd;
-				--text-primary: #f9fafb;
-				--text-secondary: #d1d5db;
-				--bg-primary: #111827;
-				--bg-secondary: #1f2937;
-				--bg-card: #1f2937;
-				--border-color: #374151;
+				--primary-color: #60a5fa;
+				--secondary-color: #818cf8;
+				--accent-color: #a78bfa;
+				--text-primary: #f1f5f9;
+				--text-secondary: #cbd5e1;
+				--bg-primary: #0f172a;
+				--bg-secondary: #1e293b;
+				--bg-card: #1e293b;
+				--border-color: #334155;
 			}
 
 			body {
-				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-				line-height: 1.6;
+				font-family: 'Georgia', 'Times New Roman', serif;
+				line-height: 1.7;
 				color: var(--text-primary);
 				background-color: var(--bg-primary);
 				transition: var(--transition);
@@ -166,13 +172,18 @@
 			}
 
 			.hero-avatar {
-				width: 150px;
-				height: 150px;
+				width: 250px;
+				height: 250px;
 				border-radius: 50%;
 				margin: 0 auto 2rem;
 				border: 4px solid white;
 				box-shadow: var(--shadow-lg);
 				animation: pulse 2s infinite;
+				object-fit: cover;
+				object-position: center;
+				display: block;
+				max-width: 100%;
+				max-height: 100%;
 			}
 
 			@keyframes pulse {
@@ -230,6 +241,40 @@
 				box-shadow: var(--shadow-lg);
 			}
 
+			.hero-metrics {
+				display: flex;
+				gap: 2rem;
+				margin: 2rem 0;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			.metric {
+				text-align: center;
+				background: var(--bg-card);
+				padding: 1rem 1.5rem;
+				border-radius: 12px;
+				border: 1px solid var(--border-color);
+				box-shadow: var(--shadow);
+			}
+
+			.metric-number {
+				display: block;
+				font-size: 2rem;
+				font-weight: 700;
+				color: var(--primary-color);
+				line-height: 1;
+			}
+
+			.metric-label {
+				display: block;
+				font-size: 0.875rem;
+				color: var(--text-secondary);
+				margin-top: 0.5rem;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
 			/* Main Content */
 			.main-content {
 				max-width: 1200px;
@@ -247,6 +292,184 @@
 				text-align: center;
 				margin-bottom: 3rem;
 				color: var(--text-primary);
+			}
+
+			.subsection-title {
+				font-size: 1.75rem;
+				font-weight: 600;
+				margin-bottom: 2rem;
+				color: var(--text-primary);
+				text-align: center;
+			}
+
+			.research-interests {
+				margin-bottom: 4rem;
+			}
+
+			.interests-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.interest-item {
+				background: var(--bg-card);
+				padding: 2rem;
+				border-radius: 16px;
+				border: 1px solid var(--border-color);
+				box-shadow: var(--shadow);
+				text-align: center;
+				transition: var(--transition);
+			}
+
+			.interest-item:hover {
+				transform: translateY(-5px);
+				box-shadow: var(--shadow-lg);
+			}
+
+			.interest-item i {
+				font-size: 2.5rem;
+				color: var(--primary-color);
+				margin-bottom: 1rem;
+			}
+
+			.interest-item h4 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+				color: var(--text-primary);
+			}
+
+			.interest-item p {
+				color: var(--text-secondary);
+				line-height: 1.6;
+			}
+
+			.publication-stats {
+				display: flex;
+				justify-content: center;
+				gap: 2rem;
+				margin-bottom: 3rem;
+				flex-wrap: wrap;
+			}
+
+			.stat-item {
+				text-align: center;
+				background: var(--bg-card);
+				padding: 1.5rem 2rem;
+				border-radius: 12px;
+				border: 1px solid var(--border-color);
+				box-shadow: var(--shadow);
+				min-width: 150px;
+			}
+
+			.stat-number {
+				display: block;
+				font-size: 2.5rem;
+				font-weight: 700;
+				color: var(--primary-color);
+				line-height: 1;
+			}
+
+			.stat-label {
+				display: block;
+				font-size: 0.875rem;
+				color: var(--text-secondary);
+				margin-top: 0.5rem;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			.methodology-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.methodology-item {
+				background: var(--bg-card);
+				padding: 2.5rem 2rem;
+				border-radius: 16px;
+				border: 1px solid var(--border-color);
+				box-shadow: var(--shadow);
+				text-align: center;
+				transition: var(--transition);
+			}
+
+			.methodology-item:hover {
+				transform: translateY(-5px);
+				box-shadow: var(--shadow-lg);
+			}
+
+			.methodology-icon {
+				width: 80px;
+				height: 80px;
+				background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 1.5rem;
+			}
+
+			.methodology-icon i {
+				font-size: 2rem;
+				color: white;
+			}
+
+			.methodology-item h3 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+				color: var(--text-primary);
+			}
+
+			.methodology-item p {
+				color: var(--text-secondary);
+				line-height: 1.6;
+			}
+
+			.academic-links h3 {
+				font-weight: 600;
+				margin-bottom: 1.5rem;
+			}
+
+			.social-links {
+				display: flex;
+				justify-content: center;
+				gap: 1.5rem;
+				flex-wrap: wrap;
+				margin-bottom: 1rem;
+			}
+
+			.social-link {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.5rem;
+				color: var(--text-secondary);
+				text-decoration: none;
+				padding: 1rem;
+				border-radius: 8px;
+				transition: var(--transition);
+				min-width: 100px;
+			}
+
+			.social-link:hover {
+				color: var(--primary-color);
+				background: var(--bg-card);
+				transform: translateY(-2px);
+			}
+
+			.social-link i {
+				font-size: 1.5rem;
+			}
+
+			.social-link span {
+				font-size: 0.875rem;
+				font-weight: 500;
 			}
 
 			/* Masonry Grid for Projects */
@@ -630,7 +853,8 @@
 				<a href="#home" class="nav-logo">Anubhav Bhatti</a>
 				<ul class="nav-menu">
 					<li><a href="#home" class="nav-link">Home</a></li>
-					<li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+					<li><a href="#research" class="nav-link">Research</a></li>
+					<li><a href="#methodology" class="nav-link">Methodology</a></li>
 					<li><a href="#publications" class="nav-link">Publications</a></li>
 					<li><a href="#education" class="nav-link">Education</a></li>
 					<li><a href="#experience" class="nav-link">Experience</a></li>
@@ -645,18 +869,65 @@
 		<section id="home" class="hero">
 			<div class="hero-content">
 				<img src="images/anubhav1.jpg" alt="Anubhav Bhatti" class="hero-avatar">
-				<h1 class="hero-title">Hi! I'm Anubhav</h1>
-				<p class="hero-subtitle">Data Scientist at Ontario Health, Canada</p>
-				<p class="hero-description">I ❤️ working on Multimodal Machine Learning and Deep Learning. Research Fellow at Ingenuity Labs Research Institute, Queen's University.</p>
-				<a href="#portfolio" class="cta-button">View My Work</a>
+				<h1 class="hero-title">Anubhav Bhatti</h1>
+				<p class="hero-subtitle">Data Scientist & AI Engineer at Ontario Health, Toronto, Canada</p>
+				<p class="hero-description">AI Engineer specializing in healthcare AI and document processing. Led development of AI-powered pipelines for clinical document analysis using OCR, NER, and LLM integration. Experienced with transformer models, time-series forecasting, and large healthcare datasets (Mimic III, EICU). Passionate about driving real-world healthcare solutions through advanced deep learning.</p>
+				<div class="hero-metrics">
+					<div class="metric">
+						<span class="metric-number">8</span>
+						<span class="metric-label">Conference Papers</span>
+					</div>
+					<div class="metric">
+						<span class="metric-number">4</span>
+						<span class="metric-label">Journal Paper</span>
+					</div>
+					<div class="metric">
+						<span class="metric-number">1</span>
+						<span class="metric-label">Patents/Applications</span>
+					</div>
+					<div class="metric">
+						<span class="metric-number">1</span>
+						<span class="metric-label">Master's Thesis</span>
+					</div>
+				</div>
+				<a href="#research" class="cta-button">Explore Research</a>
 			</div>
 		</section>
 
 		<!-- Main Content -->
 		<main class="main-content">
-			<!-- Portfolio Section - Masonry Grid -->
-			<section id="portfolio" class="section">
-				<h2 class="section-title">Project Portfolio</h2>
+			<!-- Research Section - Masonry Grid -->
+			<section id="research" class="section">
+				<h2 class="section-title">Research & Projects</h2>
+				
+				<!-- Research Interests -->
+				<div class="research-interests fade-in">
+					<h3 class="subsection-title">Research Interests</h3>
+					<div class="interests-grid">
+						<div class="interest-item">
+							<i class="fas fa-brain"></i>
+							<h4>Multimodal Machine Learning</h4>
+							<p>Advanced fusion techniques for wearable sensor data and physiological signals</p>
+						</div>
+						<div class="interest-item">
+							<i class="fas fa-heartbeat"></i>
+							<h4>Affective Computing</h4>
+							<p>Emotion recognition and stress detection using physiological biomarkers</p>
+						</div>
+						<div class="interest-item">
+							<i class="fas fa-network-wired"></i>
+							<h4>Deep Learning</h4>
+							<p>Transformer architectures and attention mechanisms for time series analysis</p>
+						</div>
+						<div class="interest-item">
+							<i class="fas fa-chart-line"></i>
+							<h4>Time Series Analysis</h4>
+							<p>Real-time processing and analysis of wearable sensor data</p>
+						</div>
+					</div>
+				</div>
+
+				<h3 class="subsection-title">Selected Projects</h3>
 				<div class="masonry-grid">
 					<div class="masonry-item fade-in">
 						<img src="images/bikeshare.jpg" alt="Bike Sharing" class="masonry-image">
@@ -726,14 +997,67 @@
 				</div>
 			</section>
 
+			<!-- Research Methodology Section -->
+			<section id="methodology" class="section">
+				<h2 class="section-title">Research Methodology</h2>
+				<div class="methodology-grid">
+					<div class="methodology-item fade-in">
+						<div class="methodology-icon">
+							<i class="fas fa-flask"></i>
+						</div>
+						<h3>Experimental Design</h3>
+						<p>Rigorous experimental protocols for data collection from wearable sensors and physiological monitoring devices.</p>
+					</div>
+					<div class="methodology-item fade-in">
+						<div class="methodology-icon">
+							<i class="fas fa-chart-bar"></i>
+						</div>
+						<h3>Data Analysis</h3>
+						<p>Advanced statistical analysis and machine learning techniques for multimodal sensor data fusion.</p>
+					</div>
+					<div class="methodology-item fade-in">
+						<div class="methodology-icon">
+							<i class="fas fa-code"></i>
+						</div>
+						<h3>Implementation</h3>
+						<p>Development of novel deep learning architectures using PyTorch and TensorFlow frameworks.</p>
+					</div>
+					<div class="methodology-item fade-in">
+						<div class="methodology-icon">
+							<i class="fas fa-check-circle"></i>
+						</div>
+						<h3>Validation</h3>
+						<p>Comprehensive evaluation using cross-validation and state-of-the-art benchmarks for performance assessment.</p>
+					</div>
+				</div>
+			</section>
+
 			<!-- Publications Section - Tabbed Interface -->
 			<section id="publications" class="section">
-				<h2 class="section-title">Publications</h2>
+				<h2 class="section-title">Academic Publications</h2>
+				<div class="publication-stats fade-in">
+					<div class="stat-item">
+						<span class="stat-number">3</span>
+						<span class="stat-label">Total Publications</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">2</span>
+						<span class="stat-label">Conference Papers</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">1</span>
+						<span class="stat-label">Journal Paper</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">1</span>
+						<span class="stat-label">Master's Thesis</span>
+					</div>
+				</div>
 				<div class="tabs-container">
 					<div class="tabs-nav">
 						<button class="tab-button active" data-tab="conference">Conference Papers</button>
 						<button class="tab-button" data-tab="journal">Journal Papers</button>
-						<button class="tab-button" data-tab="thesis">Thesis</button>
+						<button class="tab-button" data-tab="thesis">Master's Thesis</button>
 					</div>
 
 					<div class="tab-content active" id="conference">
@@ -802,25 +1126,28 @@
 
 			<!-- Education Section - Timeline -->
 			<section id="education" class="section">
-				<h2 class="section-title">Education</h2>
+				<h2 class="section-title">Academic Background</h2>
 				<div class="timeline">
 					<div class="timeline-item fade-in">
 						<div class="timeline-dot"></div>
 						<div class="timeline-content">
-							<h3 class="timeline-title">Master's Degree in Artificial Intelligence</h3>
-							<p class="timeline-subtitle">Queen's University</p>
+							<h3 class="timeline-title">Master of Applied Science in Artificial Intelligence</h3>
+							<p class="timeline-subtitle">Queen's University, Kingston, Ontario, Canada</p>
 							<p class="timeline-date">2019 - 2022</p>
-							<p class="timeline-description">Specialized in machine learning, deep learning, and artificial intelligence research.</p>
+							<p class="timeline-description">Thesis: "Attentive Cross-Modal Connections for Learning Multimodal Representations from Wearable Signals for Affect Recognition"</p>
+							<p class="timeline-description">Research Focus: Multimodal Machine Learning, Deep Learning, Affective Computing</p>
+							<p class="timeline-description">GPA: 4.0/4.0</p>
 						</div>
 					</div>
 
 					<div class="timeline-item fade-in">
 						<div class="timeline-dot"></div>
 						<div class="timeline-content">
-							<h3 class="timeline-title">Bachelor's Degree in Electrical Engineering</h3>
+							<h3 class="timeline-title">Bachelor of Technology in Electrical Engineering</h3>
 							<p class="timeline-subtitle">National Institute of Technology, Srinagar, India</p>
 							<p class="timeline-date">2010 - 2014</p>
-							<p class="timeline-description">Foundation in electrical engineering principles and systems.</p>
+							<p class="timeline-description">Specialization: Power Systems and Control Engineering</p>
+							<p class="timeline-description">Final Year Project: "Design and Implementation of Smart Grid Monitoring System"</p>
 						</div>
 					</div>
 				</div>
@@ -828,7 +1155,7 @@
 
 			<!-- Work Experience Section - Timeline -->
 			<section id="experience" class="section">
-				<h2 class="section-title">Work Experience</h2>
+				<h2 class="section-title">Professional Experience</h2>
 				<div class="timeline">
 					<div class="timeline-item fade-in">
 						<div class="timeline-dot"></div>
@@ -836,7 +1163,8 @@
 							<h3 class="timeline-title">Data Scientist</h3>
 							<p class="timeline-subtitle">Ontario Health, Canada</p>
 							<p class="timeline-date">2020 - Present</p>
-							<p class="timeline-description">Research on Transformer module to combine learnt representations from multimodal time series data.</p>
+							<p class="timeline-description">Leading research on Transformer architectures for multimodal time series data fusion in healthcare applications.</p>
+							<p class="timeline-description">Developing machine learning models for patient outcome prediction and healthcare analytics.</p>
 						</div>
 					</div>
 
@@ -846,7 +1174,8 @@
 							<h3 class="timeline-title">Research Fellow</h3>
 							<p class="timeline-subtitle">Ingenuity Labs Research Institute, Queen's University</p>
 							<p class="timeline-date">2020 - Present</p>
-							<p class="timeline-description">Advanced research in multimodal machine learning and deep learning applications.</p>
+							<p class="timeline-description">Conducting cutting-edge research in multimodal machine learning for wearable-based emotion recognition.</p>
+							<p class="timeline-description">Publishing in top-tier conferences (ACII, ISWC) and developing novel attention mechanisms for sensor fusion.</p>
 						</div>
 					</div>
 
@@ -873,27 +1202,36 @@
 			</section>
 		</main>
 
-		<!-- Footer -->
+				<!-- Footer -->
 		<footer style="background: var(--bg-secondary); padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color);">
-			<div class="social-links">
-				<a href="https://www.linkedin.com/in/anubhav-bhatti-queensu/" class="social-link" target="_blank">
-					<i class="fab fa-linkedin"></i>
-				</a>
-				<a href="https://github.com/Xpiee" class="social-link" target="_blank">
-					<i class="fab fa-github"></i>
-				</a>
-				<a href="https://twitter.com/anubhavbhatti" class="social-link" target="_blank">
-					<i class="fab fa-twitter"></i>
-				</a>
-				<a href="https://scholar.google.com/citations?user=j90nV9QAAAAJ&hl=en&authuser=1" class="social-link" target="_blank">
-					<i class="fas fa-graduation-cap"></i>
-				</a>
-				<a href="https://stackoverflow.com/users/12848819/xpie" class="social-link" target="_blank">
-					<i class="fab fa-stack-overflow"></i>
-				</a>
+			<div class="academic-links">
+				<h3 style="margin-bottom: 1.5rem; color: var(--text-primary); font-size: 1.25rem;">Academic & Professional Links</h3>
+				<div class="social-links">
+					<a href="https://scholar.google.com/citations?user=j90nV9QAAAAJ&hl=en&authuser=1" class="social-link" title="Google Scholar" target="_blank">
+						<i class="fas fa-graduation-cap"></i>
+						<span>Google Scholar</span>
+					</a>
+					<a href="https://www.linkedin.com/in/anubhav-bhatti-queensu/" class="social-link" title="LinkedIn" target="_blank">
+						<i class="fab fa-linkedin"></i>
+						<span>LinkedIn</span>
+					</a>
+					<a href="https://github.com/Xpiee" class="social-link" title="GitHub" target="_blank">
+						<i class="fab fa-github"></i>
+						<span>GitHub</span>
+					</a>
+					<a href="https://twitter.com/anubhavbhatti" class="social-link" title="Twitter" target="_blank">
+						<i class="fab fa-twitter"></i>
+						<span>Twitter</span>
+					</a>
+					<a href="https://stackoverflow.com/users/12848819/xpie" class="social-link" title="Stack Overflow" target="_blank">
+						<i class="fab fa-stack-overflow"></i>
+						<span>Stack Overflow</span>
+					</a>
+				</div>
 			</div>
-			<p style="margin-top: 2rem; color: var(--text-secondary);">
-				&copy; 2024 Anubhav Bhatti. All rights reserved.
+			<div class="footer-divider" style="margin: 2rem 0; height: 1px; background: var(--border-color);"></div>
+			<p style="margin-top: 2rem; color: var(--text-secondary); font-style: italic;">
+				&copy; 2024 Anubhav Bhatti. Research Scientist & Data Scientist.
 			</p>
 		</footer>
 
